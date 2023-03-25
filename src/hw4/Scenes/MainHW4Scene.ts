@@ -86,7 +86,8 @@ export default class MainHW4Scene extends HW4Scene {
         this.load.spritesheet("RedHealer", "hw4_assets/spritesheets/RedHealer.json");
 
         // Load the tilemap
-        this.load.tilemap("level", "hw4_assets/tilemaps/HW4Tilemap.json");
+        //this.load.tilemap("level", "hw4_assets/tilemaps/HW4Tilemap.json");
+        this.load.tilemap("level", "hw4_assets/tilemaps/custometilemap.json")
 
         // Load the enemy locations
         this.load.object("red", "hw4_assets/data/enemies/red.json");
@@ -432,6 +433,7 @@ export default class MainHW4Scene extends HW4Scene {
 
         // TODO set the strategy to use A* pathfinding
         navmesh.setStrategy("direct");
+        navmesh.setStrategy("astar");
 
         // Add this navmesh to the navigation manager
         this.navManager.addNavigableEntity("navmesh", navmesh);

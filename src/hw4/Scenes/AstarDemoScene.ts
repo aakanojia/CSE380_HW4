@@ -25,6 +25,7 @@ export default class AStarDemoScene extends Scene {
 
     public loadScene(): void {
         this.load.tilemap("level", "hw4_assets/tilemaps/HW4Tilemap.json");
+        //this.load.tilemap("level", "hw4_assets/tilemaps/custometilemap.json");
         this.load.spritesheet("BlueEnemy", "hw4_assets/spritesheets/BlueEnemy.json");
     }
 
@@ -46,7 +47,8 @@ export default class AStarDemoScene extends Scene {
         
         // TODO Set the navigation strategy to be A*
         navmesh.setStrategy("direct");
-
+        navmesh.setStrategy("astar");
+        
         // Create a dummy NPC
         this.npc = this.add.animatedSprite(NPCActor, "BlueEnemy", "primary")
         this.npc.addPhysics();
